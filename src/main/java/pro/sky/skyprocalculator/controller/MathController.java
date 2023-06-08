@@ -18,7 +18,7 @@ public class MathController {
 
     @GetMapping("/calculator/minus")
     public String minus(@RequestParam String num1, @RequestParam String num2) {
-        return num1 + " - " + num2 + " = " + minus(num1, num2);
+        return num1 + " - " + num2 + " = " + mathFunctionService.minus(num1, num2);
     }
 
     @GetMapping("/calculator/multiply")
