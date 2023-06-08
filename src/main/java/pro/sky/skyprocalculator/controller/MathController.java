@@ -9,7 +9,11 @@ import pro.sky.skyprocalculator.service.BaseMathFunctionServiceImpl;
 @RestController
 
 public class MathController {
-    private final BaseMathFunctionService mathFunctionService = new BaseMathFunctionServiceImpl();
+    private final BaseMathFunctionService mathFunctionService;
+
+    public MathController(BaseMathFunctionServiceImpl mathFunctionService) {
+        this.mathFunctionService = mathFunctionService;
+    }
 
     @GetMapping("/calculator/plus")
     public String plus(@RequestParam String num1, @RequestParam String num2) {
@@ -22,7 +26,7 @@ public class MathController {
     }
 
     @GetMapping("/calculator/multiply")
-    public String multiply(@RequestParam String num1, @RequestParam String num2) {
+    public String multiply(@RequestParam("num1") String num1, @RequestParam String num2) {
         return num1 + " * " + num2 + " = " + mathFunctionService.multiply(num1, num2);
     }
 
