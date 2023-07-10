@@ -2,10 +2,13 @@ package pro.sky.skyprocalculator.service;
 
 public interface BaseMathFunctionService {
 
-    Integer plus(String a, String b);
-    Integer minus(String a, String b);
-    Integer multiply(String a, String b);
-    Integer divide(String a, String b);
+    String plus(String a, String b);
+    String minus(String a, String b);
+    String multiply(String a, String b);
+    String divide(String a, String b);
+
+    void checkParamsGiven(String a, String b);
+
 
 
 

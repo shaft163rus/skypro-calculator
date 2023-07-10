@@ -19,22 +19,22 @@ public class MathController {
 
     @GetMapping("/plus")
     public String plus(@RequestParam String num1, @RequestParam String num2) {
-        return num1 + " + " + num2 + " = " + mathFunctionService.plus(num1, num2);
+        return mathFunctionService.plus(num1, num2);
     }
 
     @GetMapping("/minus")
     public String minus(@RequestParam String num1, @RequestParam String num2) {
-        return num1 + " - " + num2 + " = " + mathFunctionService.minus(num1, num2);
+        return mathFunctionService.minus(num1, num2);
     }
 
     @GetMapping("/multiply")
     public String multiply(@RequestParam("num1") String num1, @RequestParam String num2) {
-        return num1 + " * " + num2 + " = " + mathFunctionService.multiply(num1, num2);
+        return mathFunctionService.multiply(num1, num2);
     }
 
     @GetMapping("/divide")
     public String divide(@RequestParam String num1, @RequestParam String num2) {
-        return num1 + " / " + num2 + " = " + mathFunctionService.divide(num1, num2);
+        return mathFunctionService.divide(num1, num2);
     }
 
 }
