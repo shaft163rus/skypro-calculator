@@ -7,7 +7,7 @@ public interface BaseMathFunctionService {
     String multiply(String a, String b);
     String divide(String a, String b);
 
-    void checkParamsGiven(String a, String b);
+    //void checkParamsGiven(String a, String b);
 
 
 
