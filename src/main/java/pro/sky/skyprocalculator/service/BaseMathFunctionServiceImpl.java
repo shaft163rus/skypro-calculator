@@ -6,33 +6,56 @@ import org.springframework.stereotype.Service;
 
 public class BaseMathFunctionServiceImpl implements BaseMathFunctionService {
 
-    @Override
-    public Integer plus(String a, String b) {
-        Integer result = Integer.parseInt(a) + Integer.parseInt(b);
 
-        return result;
+    @Override
+    public String plus(String a, String b) {
+        if (a == null || b == null) {
+            throw   new IllegalArgumentException("null values are not allowed");
+        }
+
+        int result = Integer.parseInt(a) + Integer.parseInt(b);
+        return Integer.toString(result);
     }
 
     @Override
-    public Integer minus(String a, String b) {
-        Integer result = Integer.parseInt(a) - Integer.parseInt(b);
+    public String minus(String a, String b) {
+        if (a == null || b == null) {
+            throw   new IllegalArgumentException("null values are not allowed");
+        }
 
-        return result;
+        int result = Integer.parseInt(a) - Integer.parseInt(b);
+        return Integer.toString(result);
     }
 
     @Override
-    public Integer multiply(String a, String b) {
-        Integer result = Integer.parseInt(a) * Integer.parseInt(b);
+    public String multiply(String a, String b) {
+        if (a == null || b == null) {
+            throw   new IllegalArgumentException("null values are not allowed");
+        }
 
-        return result;
+        if (b.equals("0")) {
+            throw   new IllegalArgumentException("division by zero is not allowed");
+        }
+
+
+        int result = Integer.parseInt(a) * Integer.parseInt(b);
+        return Integer.toString(result);
 
     }
 
     @Override
-    public Integer divide(String a, String b) {
-        Integer result = Integer.parseInt(a) / Integer.parseInt(b);
+    public String divide(String a, String b) {
 
-        return result;
+
+        if (a == null || b == null) {
+            throw   new IllegalArgumentException("null values are not allowed");
+        }
+
+            int result = Integer.parseInt(a) / Integer.parseInt(b);
+            return Integer.toString(result);
+
+
+        
 
     }
 
